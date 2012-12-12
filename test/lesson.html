@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Javascriptの練習</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<style>
+			.font36{
+				font-size:36px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>JQueryの練習</h1>
+		<div>
+		<p>練習<a href="http://google.com/">リンク</a></p>
+		<ul>
+		<li>0番</li>
+		<li class="listitem">1番</li>
+		<li class="listitem">2番</li>
+		<li class="listitem"><a href="http://google.com/">3番</a></li>
+		</ul>
+		<input type="text" value="子猫" ID="search" /><input type="submit" value="検索" />
+		</div>
+		<script>
+$(function() {
+//jQuery code
+$('li:eq(1)').prev().css('color','red');
+});
+		</script>
+	</body>
+</html>
