@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis" />
+<meta name="Keywords" content="キャバクラ,画像，キャバクラ嬢,キャバ嬢,動画,ムービー" />
+<meta name="Description" content="キャバクラ嬢のグラビア＆ムービー一覧ページ" />
+<title>カバーガール | キャバ嬢グラビア一覧：夜遊びWALKER</title>
+<link rel="stylesheet" type="text/css" href="css/area.css" />
+<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<div id="wrapper">
+<table id="osoto">
+<tr>
+  <td colspan="2"><h1>キャバ嬢の美画像＆オフショット動画　夜遊びWALKER</h1>
+  {include_php file="../header_area.inc" once="true"}</td>
+</tr>
+<tr>
+<td colspan="3">
+<div id="top-menu">
+<ul class="menu clrfix">
+<li class="menu"><span class="invisible">夜遊びメニュー</span></a></li>
+<li class="area"><a href="search_list_area.php"><span class="invisible">エリア検索</span></a></li>
+<li class="category"><a href="search_list_category.php"><span class="invisible">業種検索</span></a></li>
+<li class="cast"><a href="cast_search.php"><span class="invisible">キャバ嬢一覧</span></a></li>
+<li class="cover"><a href="cover.php"><span class="invisible">カバーガール</span></a></li>
+<li class="present"><a href="present.php"><span class="invisible">無料招待券</span></a></li>
+<li class="exmovie"><a href="shopmovie/"><span class="invisible">EX_MOVIE</span></a></li>
+<li class="chakka"><a href="chakka/index.php"><span class="invisible">着火娘</span></a></li>
+</ul>
+<div class="clrfix"><img width="780" height="6" alt="" src="img/index/tab_underline.gif" /></div>
+</div>
+</td>
+</tr>
+<!--top-menu end-->
+<tr>
+  <td colspan="2"><div class="pankuzu">
+  <a href="http://www.yoasobiwalker.jp/"  title="キャバクラ、パブ、クラブ情報　夜遊びWALKER">TOP</a>
+  &gt; カバーガール一覧
+  </div>
+  <!--<span class="txtmenu">{include_php file="../textmenu.inc" once="true"} </span>--></td>
+</tr>
+<tr>
+  <td valign="top" id="left"><table>
+  <tr valign="top">
+    <td><h2 id="search_title_h02"><span class="invisible">キャバクラ店舗検索</span></h2>
+      <div id="search_box">
+    <h3 class="stationSearchTitle"><img src="img/index/search_title.gif" width="150" height="24" /></h3>
+        <div id="searchBox">
+    <form action="shop_search.php" method="post"  name="stationSearchForm" id="stationSearchForm" onsubmit="nameSearchSubmit();">
+    <input name="s_str" type="text" value="" maxlength="128" size="24" class="searchForm" onfocus="nameSearchDefaultValueOff();" />
+    <!--{if $s_str == "" && $s_str == null} -->
+    <script type="text/javascript">nameSearchDefaultValue();</script>
+    <!--@ {/if} -->
+    <input type="radio" name="s_kind" value="1" id="searchRadioShopName" {if $s_kind == '1' || $s_kind == ''} checked{/if}>
+      <label for="searchRadioShopName">店名</label>
+      <input type="radio" name="s_kind" id="searchRadioStationName" value="2"{if $s_kind == '2'} checked{/if} />
+      <label for="searchRadioStationName">駅名</label>
+      <input name="sub" type="submit" class="button" value="検索" />
+    </form>
+      </div>
+        <h3 class="g_search_list_title_h3"><span class="invisible">エリアで探す</span></h3>
+        <ul>
+    <!--@ {section name=m loop=$l_acode start=1} -->
+    <li class="area_menu"><a href="area.php?s_tcode=&amp;k_acode={$l_acode[m]}" title="{$l_aname[m]}エリアのキャバクラ情報">{$l_aname[m]}エリア</a></li>
+          <!--@ {/section} -->
+    </ul>
+        <h3 class="g_search_list_title_h3" id="g_search_list_title_h3_2"><span class="invisible">業種で探す</span></h3>
+        <ul id="gyoushu_list_ul">
+    <!--@ {section name=m loop=$l_tcode start=1} -->
+    <li class="area_menu"><a href="category.php?s_tcode={$l_tcode[m]}&amp;k_acode=" title="業種で検索。{$l_tname[m]}情報">{$l_tname[m]}</a></li>
+          <!--@ {/section} -->
+    </ul>
+		<a href="cast_search.php" id="castSearchBtn" title="キャバクラ嬢検索"><img src="img/index/girls_search_btn.jpg" width="150" height="100" alt="キャバクラ嬢検索" class="castlist" /></a>
+    </div>      </td>
+  </tr>
+  <tr valign="top">
+    <td><div id="qr2">
+    <p><img src="img/index/mobile_banner2.jpg" alt="夜遊びWALKER　モバイル版" width="148" height="263" /></p>
+    <p class="red"> ▼ケータイにURLを送る </p>
+    <table align="center" cellpadding="3" class="url_sousin">
+    <form action="urlmail.php" method="post" name="form1" id="form1">
+    <tr>
+      <td align="center"><input type="text" name="mail_name" size="15" /></td>
+    </tr>
+    <tr>
+      <td align="center"><select name="mail_domain">
+        <option value="" selected="selected">選択してください </option>
+        <option value="@docomo.ne.jp">@docomo.ne.jp </option>
+        <option value="@ezweb.ne.jp">@ezweb.ne.jp </option>
+        <option value="@softbank.ne.jp">@softbank.ne.jp </option>
+        <option value="@t.vodafone.ne.jp">@t.vodafone.ne.jp </option>
+        <option value="@d.vodafone.ne.jp">@d.vodafone.ne.jp</option>
+        <option value="@h.vodafone.ne.jp">@h.vodafone.ne.jp</option>
+        <option value="@c.vodafone.ne.jp">@c.vodafone.ne.jp</option>
+        <option value="@k.vodafone.ne.jp">@k.vodafone.ne.jp</option>
+        <option value="@r.vodafone.ne.jp">@r.vodafone.ne.jp</option>
+        <option value="@n.vodafone.ne.jp">@n.vodafone.ne.jp</option>
+        <option value="@s.vodafone.ne.jp">@s.vodafone.ne.jp</option>
+        <option value="@q.vodafone.ne.jp">@q.vodafone.ne.jp</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td align="center"><input type="submit" name="Submit3" value="送信" />
+      <input type="hidden" name="title" value="yoasobiwalker URL" />
+      <input type="hidden" name="body" value="http://www.yoasobiwalker.jp/" />
+      <input type="hidden" name="from_addr" value="info@yoasobiwalker.jp" /></td>
+    </tr>
+    </form>
+    </table>
+    </div></td>
+  </tr>
+  </table></td>
+  <td valign="top" id="area_main"><h2 id="cover_new">今回のキャバクラ嬢 動画＆画像</h2>
+  <!-- cover main start-->
+  <div id="new">
+  <div class="cover_photo newgirl_photo2">
+   <a href="cover/100806/top.php" title="中野・キャバクラ「LUXIS」神夜 柚" ><img src="cover/100806/img/new.jpg" alt="中野・キャバクラ「LUXIS」神夜 柚" width="610" height="220" border="0" />&gt;&gt;グラビアを見る</a>  </div>
+  <!-- backnumber start-->
+  </div>
+  <div id="bn01">
+  <h2 id="cover_bn">過去のキャバクラ嬢 動画＆画像</h2>
+  <div class="bn_tate"><br />
+
+
+
+<a href="cover/100702/top.php" title="新宿・セクシーパブ「メイドセクキャバ 萌 -Moe-」ちなつ"><img src="cover/100702/img/bn.jpg" alt="新宿・セクシーパブ「メイドセクキャバ 萌 -Moe-」ちなつ" width="114" height="210" border="0" /></a>
+
+<a href="cover/100604/top.php" title="中野・キャバクラ「BLENDA」上條 菜緒"><img src="cover/100604/img/bn.jpg" alt="中野・キャバクラ「BLENDA」上條 菜緒" width="114" height="210" border="0" /></a>
+
+<a href="cover/100507/top.php" title="新宿・セクシーパブ「プラトニックZONE」海"><img src="cover/100507/img/bn.jpg" alt="新宿・セクシーパブ「プラトニックZONE」海" width="114" height="210" border="0" /></a>
+
+
+<a href="cover/100402/top.php" title="渋谷・セクシーキャバクラ「渋谷リゾート」さく"><img src="cover/100402/img/bn.jpg" alt="渋谷・セクシーキャバクラ「渋谷リゾート」さく" width="114" height="210" border="0" /></a>
+
+
+
+<a href="cover/100205/top.php" title="立川・セクシーパブ「club Jack」まりか"><img src="cover/100205/img/bn.jpg" alt="立川・セクシーパブ「club Jack」まりか" width="114" height="210" border="0" /></a>
+
+
+
+<a href="cover/100108/top.php" title="市川・昼キャバ「ラファエル」みつき"><img src="cover/100108/img/bn.jpg" alt="市川・昼キャバ「ラファエル」みつき" width="114" height="210" border="0" /></a>
+
+
+
+<a href="cover/090904/top.php" title="厚木・セクシーパブ「クラブジャック厚木」蓮"><img src="cover/090904/img/bn.jpg" alt="歌舞伎町・セクキャバ「クラブジャック厚木」蓮" width="114" height="210" border="0" /></a>
+
+
+<a href="cover/090807/top.php" title="歌舞伎町・セクキャバ「PRIDE -セクキャバ プライド-」ユウ"><img src="cover/090807/img/bn.jpg" alt="歌舞伎町・セクキャバ「PRIDE -セクキャバ プライド-」ユウ" width="114" height="210" border="0" /></a> 
+
+
+
+ <a href="cover/090403/top.php" title="新宿・セクパブ「ナースコール～Nurse Call～」なお"><img src="cover/090403/img/bn.jpg" alt="新宿・セクパブ「ナースコール～Nurse Call～」なお" width="114" height="210" border="0" /></a> 
+
+  
+ 
+<a href="cover/090109/top.php" title="厚木・セクパブ「クラブジャック厚木」れいか"><img src="cover/090109/img/bn.jpg" alt="厚木・セクパブ「クラブジャック厚木」れいか" width="114" height="210" border="0" /></a>
+ 
+<a href="cover/081205/top.php" title="六本木・キャバクラ「Club FRAU」 茜"><img src="cover/081205/img/bn.jpg" alt="六本木・キャバクラ「Club FRAU」 茜" width="114" height="210" border="0" /></a>
+  
+  
+  <a href="cover/080702/top.php" title="市川・昼キャバ「ラファエル」神崎 莉音"><img src="cover/080702/img/bn.jpg" alt="市川・昼キャバ「ラファエル」神崎 莉音" width="114" height="210" /></a>
+  
+  
+  <a href="cover/071024/top.php" title="新宿・セクシーパブ「セクキャバ　クラブ　ギャルジャンヌ」朱璃"><img src="cover/071024/img/bn.jpg" alt="新宿・セクシーパブ「セクキャバ　クラブ　ギャルジャンヌ」朱璃" width="114" height="210" /></a>
+
+  <!-- backnumber02 --></td>
+</tr>
+<tr>
+  <td colspan="2" id="cover_footer">{include_php file="../footer2.inc" once="true"} </td>
+</tr>
+</table>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-457831-4");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>
