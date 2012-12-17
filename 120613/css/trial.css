@@ -1,0 +1,75 @@
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, hr,
+header, hgroup, section, article, aside, hgroup, footer, figure, figcaption, nav {
+ margin: 0;
+ padding: 0;
+ font-size: 100%;
+}
+
+body {
+ line-height: 1.0;
+ font-family: Arial, "ÉqÉâÉMÉmäpÉS ProN", "ÉqÉâÉMÉmäpÉS ProN W3", ÇlÇr ÇoÉSÉVÉbÉN, sans-serif;
+ -webkit-text-size-adjust: none;
+ color:#222222;
+}
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary { 
+ display:block;
+}
+
+.block{ display:block;}
+
+img {
+ border: 0;
+ vertical-align: bottom;
+}
+
+ul, ol {
+ list-style: none;
+}
+
+table {
+ border-spacing: 0;
+ empty-cells: show;
+}
+
+.clrfix:after{
+content:"";
+display:block;
+clear:both;
+height:1px;
+overflow:hidden;
+}
+/*//////////////////////////////////////////////////////////////*/
+body{ background:#fff; width: 100%; margin:0px auto;}
+#photo{ margin:0px auto;}
+.wrap{ margin:0px auto; width: 270px;}
+#left,#right{
+	float: left;
+	padding:10px 0px;
+	display:block;
+	xmargin-top:165px;
+	text-decoration:none;
+	font-weight:bold;
+	color:#fff;
+	background-color:#bbb;
+	text-align:center;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	vertical-align:middle;
+	-webkit-box-shadow: 1px 1px 2px #ccc;
+	width:33%;
+}
+#left{ visibility: hidden;}
+.imgWrap{ float: left; width:270px; height:340px; x-webkit-box-shadow: 1px 1px 1px #ccc; overflow:hidden; margin-bottom:5px;}
+#bigImg{ margin-left:0px;}/*èâä˙ï\é¶à íu270pxçèÇ›*/
+#bigImg li{ float:left; width:270px; text-align:center;}
+#bigImg img{ border:1px solid #fff; -webkit-box-shadow: 2px 2px 2px #ccc; margin:5px; max-width:250px; max-height:330px; overflow:hidden; text-align:center;}
+p.number{ margin:0px auto; width:250px; text-align:center; xpadding-top:5px;}
+p.number span.indicator{ display:block; float:left; width:34%; line-height:35px;}
+
+#thum{ text-align:center; xdisplay:inline;}
+#thum li{ display:inline-block; padding:10px 0 0 0; cursor:pointer;}
+#thum li img{ max-width: 50px; max-height:66px; text-align:center; border:1px solid #aaaaaa;}
+
+#thum li img.select,#thum li:first-child img.select{ border:1px solid #F00;}

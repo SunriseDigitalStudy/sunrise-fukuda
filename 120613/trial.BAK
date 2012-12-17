@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Shift_JIS">
+<title>キャバクラ情報 夜遊びWALKER -夜遊びウォーカー-</title>
+<meta name="viewport" content="width = device-width" />
+<link rel="stylesheet" href="css/trial.css" media="screen" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.gallery.js"></script>
+<script>
+$(function(){
+$(".test").gallery({
+  right: $("a#right"),
+  left: $("a#left"),
+  thum: $("#thum"),
+  onInit: function(total){
+    $("p.number span.indicator .total").text(total);
+  },
+  onChange: function(index, total){
+    $("p.number span.indicator .current").text(index);
+  }
+});
+});
+</script>
+</head>
+<body>
+<section id="photo" class="clrfix">
+<div class="wrap clrfix">
+
+<div class="imgWrap clrfix">
+<ul id="bigImg" class="clrfix">
+
+<li class="img"><img src="img/1.jpg" /></li>
+<li class="img"><img src="img/2.jpg" /></li>
+<li class="img"><img src="img/3.jpg" /></li>
+<li class="img"><img src="img/4.jpg" /></li>
+<li class="img"><img src="img/5.jpg" /></li>
+
+</ul>
+</div>
+<p class="number clrfix"><a id="left" href=""><</a><span class="indicator"><span class="current"></span>/<span class="total"></span></span><a id="right" href="">></a></p>
+</div>
+<ul id="thum">
+</ul>
+</section>
+
+<div class="test">aaaa</div>
+<div class="test">aaaa</div>
+
+</body>
+</html>
