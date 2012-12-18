@@ -6,19 +6,19 @@ $.fn.gallery = function(option) {
 					thum: null
 	       }, option);
 		   
-		   var liNum = $(this).children("li").length;		   // li‚Ì”æ“¾
-		   var liWidth = $(this).children("li").width();	   // li‚Ì•æ“¾
-		   var ulWidth = liWidth*liNum;		  		   // ul‚Ì•æ“¾
-		   var moveLimit = ulWidth-liWidth;			   // ul‚ÌˆÚ“®§ŒÀ‹——£
-		   $(this).width(ulWidth);		   		   // #bigImg‚Ì•Œˆ’è
-		   // ƒiƒ“ƒoƒŠƒ“ƒO—p‰æ‘œ‰Šú”Ô†
+		   var liNum = $(this).children("li").length;		   // liã®æ•°å–å¾—
+		   var liWidth = $(this).children("li").width();	   // liã®å¹…å–å¾—
+		   var ulWidth = liWidth*liNum;		  		   // ulã®å¹…å–å¾—
+		   var moveLimit = ulWidth-liWidth;			   // ulã®ç§»å‹•åˆ¶é™è·é›¢
+		   $(this).width(ulWidth);		   		   // #bigImgã®å¹…æ±ºå®š
+		   // ãƒŠãƒ³ãƒãƒªãƒ³ã‚°ç”¨ç”»åƒåˆæœŸç•ªå·
 		   var imageNum = 1;
 		   
-		   //@‰Šú‚Ì‰æ‘œ–‡”•\¦
+		   //ã€€åˆæœŸã®ç”»åƒæšæ•°è¡¨ç¤º
 		   $("span.current").text(1);
 		   $("span.total").text(liNum);
 		   
-			// ‰æ‘œƒiƒ“ƒoƒŠƒ“ƒO
+			// ç”»åƒãƒŠãƒ³ãƒãƒªãƒ³ã‚°
 			$(this).find("img").each(function(){
 				var detaNum = imageNum++;
 				$(this).attr("deta-img",detaNum);
@@ -27,16 +27,16 @@ $.fn.gallery = function(option) {
 				}
 			});
 			
-			// ‘å‰æ‘œ‚Ìƒf[ƒ^‚©‚çƒTƒ€ƒlƒCƒ‹•\¦
+			// å¤§ç”»åƒã®ãƒ‡ãƒ¼ã‚¿ã‹ã‚‰ã‚µãƒ ãƒã‚¤ãƒ«è¡¨ç¤º
 				var thumDate = $(this).html();
 				$(settings.thum).html(thumDate);
-				$(settings.thum).find("li:first-child img").addClass("select"); //‰Šú‘I‘ğó‘Ô
+				$(settings.thum).find("li:first-child img").addClass("select"); //åˆæœŸé¸æŠçŠ¶æ…‹
 				if ($(this).is("li:last-child img")){
 				return this;
 				}
 		
 		function changeTo(direction){
-			   		// ¶‰E‚ÆƒTƒ€ƒlƒNƒŠƒbƒN‚Å‚Ì“®ì”»’è
+			   		// å·¦å³ã¨ã‚µãƒ ãƒã‚¯ãƒªãƒƒã‚¯ã§ã®å‹•ä½œåˆ¤å®š
 					if (direction == 0){
 						var plusMinus = "-=";
 						var direction = 2;
@@ -46,12 +46,12 @@ $.fn.gallery = function(option) {
 					} else if(direction >= 1){
 						var plusMinus = "-";
 					}
-					// “®ìŠJn
+					// å‹•ä½œé–‹å§‹
 					console.log(this)
 					$("#bigImg:not(:animated)").animate({marginLeft: plusMinus + (direction * liWidth - liWidth) + "px"},
 						   {duration:"nomal",
 							complete:function(){
-								//@ƒ{ƒ^ƒ“‚Ì•\¦”ñ•\¦
+								//ã€€ãƒœã‚¿ãƒ³ã®è¡¨ç¤ºéè¡¨ç¤º
 								var mLeft = $(this).css("margin-left");
 								var difference = moveLimit+parseInt(mLeft);
 								var nowNumber = 1+parseInt(mLeft)/-liWidth;
@@ -68,9 +68,9 @@ $.fn.gallery = function(option) {
 								} else if (nowNumber < liNum) {
 								$(settings.right).css("visibility","visible");
 								}
-								//@‰æ‘œ–‡”•\¦
+								//ã€€ç”»åƒæšæ•°è¡¨ç¤º
 								$("span.current").text(nowNumber);
-								// ƒ{[ƒ_[•ÏX
+								// ãƒœãƒ¼ãƒ€ãƒ¼å¤‰æ›´
 								var borderNum = parseInt(mLeft) / -liWidth;
 								$(settings.thum).find("li img").removeClass("select");
 								$(settings.thum).find("li img").eq(borderNum).addClass("select");
@@ -78,21 +78,21 @@ $.fn.gallery = function(option) {
 						   });
 
 			   }
-			// nextƒ{ƒ^ƒ“ƒNƒŠƒbƒN
+			// nextãƒœã‚¿ãƒ³ã‚¯ãƒªãƒƒã‚¯
 			$(settings.right).click(function(){
 										var direction = 0;
 										changeTo(direction);
 										return false;
 				});
 
-			// prevƒ{ƒ^ƒ“ƒNƒŠƒbƒN
+			// prevãƒœã‚¿ãƒ³ã‚¯ãƒªãƒƒã‚¯
 			$(settings.left).click(function(){
 										var direction = -1;
 										changeTo(direction);
 										return false;
 				});
 			
-			// ƒTƒ€ƒlƒCƒ‹ƒNƒŠƒbƒN
+			// ã‚µãƒ ãƒã‚¤ãƒ«ã‚¯ãƒªãƒƒã‚¯
 			$(settings.thum).find("li img").click(function(){
 				var Num = $(this).attr("deta-img");
 				changeTo(Num);
