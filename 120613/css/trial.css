@@ -7,7 +7,7 @@ header, hgroup, section, article, aside, hgroup, footer, figure, figcaption, nav
 
 body {
  line-height: 1.0;
- font-family: Arial, "ƒqƒ‰ƒMƒmŠpƒS ProN", "ƒqƒ‰ƒMƒmŠpƒS ProN W3", ‚l‚r ‚oƒSƒVƒbƒN, sans-serif;
+ font-family: Arial, "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ ProN", "ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ ProN W3", ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯, sans-serif;
  -webkit-text-size-adjust: none;
  color:#222222;
 }
@@ -62,7 +62,7 @@ body{ background:#fff; width: 100%; margin:0px auto;}
 }
 #left{ visibility: hidden;}
 .imgWrap{ float: left; width:270px; height:340px; x-webkit-box-shadow: 1px 1px 1px #ccc; overflow:hidden; margin-bottom:5px;}
-#bigImg{ margin-left:0px;}/*‰Šú•\¦ˆÊ’u270px‚İ*/
+#bigImg{ margin-left:0px;}/*åˆæœŸè¡¨ç¤ºä½ç½®270pxåˆ»ã¿*/
 #bigImg li{ float:left; width:270px; text-align:center;}
 #bigImg img{ border:1px solid #fff; -webkit-box-shadow: 2px 2px 2px #ccc; margin:5px; max-width:250px; max-height:330px; overflow:hidden; text-align:center;}
 p.number{ margin:0px auto; width:250px; text-align:center; xpadding-top:5px;}
