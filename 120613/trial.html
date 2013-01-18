@@ -14,12 +14,24 @@ $(function(){
 		left: $("a#left"),
 		thum: $("#thum"),
 		onInit: function(total){
-			$("p.number span.indicator .total").text(total);
+			$("#photo p.number span.indicator .total").text(total);
 		},
 		onChange: function(index, total){
-			$("p.number span.indicator .current").text(index);
+			$("#photo p.number span.indicator .current").text(index);
 		}
 	});
+	$("#bigImg2").gallery({
+		right: $("a#right2"),
+		left: $("a#left2"),
+		thum: $("#thum2"),
+		onInit: function(total){
+			$("#photo2 p.number span.indicator .total").text(total);
+		},
+		onChange: function(index, total){
+			$("#photo2 p.number span.indicator .current").text(index);
+		}
+	});
+
 });
 </script>
 </head>
@@ -38,6 +50,22 @@ $(function(){
 			<p class="number clrfix"><a id="left" href=""><</a><span class="indicator"><span class="current"></span>/<span class="total"></span></span><a id="right" href="">></a></p>
 		</div>
 		<ul id="thum">
+		</ul>
+	</section>
+	<section id="photo2" class="clrfix">
+		<div class="wrap clrfix">
+			<div class="imgWrap clrfix">
+				<ul id="bigImg2" class="clrfix">
+					<li class="img"><img src="img/1.jpg" /></li>
+					<li class="img"><img src="img/2.jpg" /></li>
+					<li class="img"><img src="img/3.jpg" /></li>
+					<li class="img"><img src="img/4.jpg" /></li>
+					<li class="img"><img src="img/5.jpg" /></li>
+				</ul>
+			</div>
+			<p class="number clrfix"><a id="left2" href=""><</a><span class="indicator"><span class="current"></span>/<span class="total"></span></span><a id="right2" href="">></a></p>
+		</div>
+		<ul id="thum2">
 		</ul>
 	</section>
 </body>
