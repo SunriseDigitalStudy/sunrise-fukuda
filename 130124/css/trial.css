@@ -41,14 +41,35 @@ height:1px;
 overflow:hidden;
 }
 /*//////////////////////////////////////////////////////////////*/
-body{ background:#fff; width: 100%; margin:0px auto;}
+body{
+	position: relative;
+	background:#fff;
+	width: 100%;
+	margin:0px auto;
+}
+
+section.main{
+	padding: 10px;
+	background: #aaa;
+	height: 500px;
+}
+
 
 .menu-body{
+	position: absolute;
+	bottom: 0px;
 	display: none;
-
+	padding: 10px;
+	background: #ff0;
+-webkit-animation: anime1 3s ease -2s 1 alternate forwards;
 }
 
 li{
 	background: #eee;
-	border-bottom: 1px solid #fff;
+	margin-top: 1px;
+}
+
+@-webkit-keyframes anime1 {
+0% { height: 0px; background-color: aqua;}
+100% { xheight: 300px; background-color: blue;}
 }
