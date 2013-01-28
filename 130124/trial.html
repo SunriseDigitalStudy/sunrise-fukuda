@@ -9,7 +9,7 @@
 <script src="js/jquery.sdxShutter.js"></script>
 <script>
 $(function(){
-	$("#open-btn").shutter({
+	$("p#open-btn").shutter({
 		menu: $("section.menu-body"),
 		closeBtn: $("p#close-btn"),
 		mainBody: $("section.main")
@@ -19,8 +19,21 @@ $(function(){
 </head>
 <body id="shutterBody">
 	<section class="main">
-		<p id="open-btn">開く</p>
+		<p id="open-btn" onclick="move(500, 100, 250)">開く</p>
 	</section>
+<div id="buttons">
+<input type="button" onclick="move(0, 0, 0)" value="左上へ">
+<input type="button" onclick="move(205, 0, 90)" value="右上へ"><br>
+<input type="button" onclick="move(0, 150, 180)" value="左下へ">
+<input type="button" onclick="move(205, 150, 270)" value="右下へ">
+</div>
+<div id="block"></div>
+<script>
+var node = document.getElementById("block");
+function move (x, y, r) {
+    node.style.webkitTransform = 'translate3d(' + x + 'px,' + y + 'px,0) rotate(' + r + 'deg)';
+}
+</script>
 	<section class="menu-body">
 		<p id="close-btn">閉じる</p>
 		<ul class="menu">

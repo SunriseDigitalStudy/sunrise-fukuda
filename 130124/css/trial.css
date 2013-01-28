@@ -42,7 +42,6 @@ overflow:hidden;
 }
 /*//////////////////////////////////////////////////////////////*/
 body{
-	position: relative;
 	background:#fff;
 	width: 100%;
 	margin:0px auto;
@@ -51,25 +50,32 @@ body{
 section.main{
 	padding: 10px;
 	background: #aaa;
+	width: 500px;
 	height: 500px;
+	margin: 10px auto;
 }
 
 
 .menu-body{
-	position: absolute;
-	bottom: 0px;
 	display: none;
+	width: 500px;
+	height: 500px;
+	margin: 10px auto;
 	padding: 10px;
 	background: #ff0;
--webkit-animation: anime1 3s ease -2s 1 alternate forwards;
 }
-
 li{
 	background: #eee;
 	margin-top: 1px;
 }
 
-@-webkit-keyframes anime1 {
-0% { height: 0px; background-color: aqua;}
-100% { xheight: 300px; background-color: blue;}
+#buttons {
+  margin-bottom: 10px;
+  text-align: center;
+}
+#block {
+  width: 100px;
+  height: 100px;
+  background: red;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
 }

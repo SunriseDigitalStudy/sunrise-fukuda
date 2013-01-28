@@ -7,16 +7,19 @@ $.fn.shutter = function(option) {
 	       }, option);
 
 	var opnBtn = $(this);
+	var visible = document.getElementById("close-btn");
 
-	$(opnBtn).click(function(){
-		$(settings.menu).css("display","block");
-		$(settings.mainBody).css("display", "none");
-
-	});
-	$(settings.closeBtn).click(function(){
-		$(settings.menu).css("display","none");
-		$(settings.mainBody).css("display", "block");
-	});
+	function move (x, y, r) {
+		visible.style.webkitTransform = 'translate3d(' + x + 'px,' + y + 'px,0) rotate(' + r + 'deg)';
+		$(opnBtn).click(function(){
+			$(settings.menu).css("display","block");
+			$(settings.mainBody).css("display", "none");
+		});
+		$(settings.closeBtn).click(function(){
+			$(settings.menu).css("display","none");
+			$(settings.mainBody).css("display", "block");
+		});
+	}
 
 
 
