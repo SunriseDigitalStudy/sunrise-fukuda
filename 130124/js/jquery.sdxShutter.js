@@ -8,18 +8,31 @@ $.fn.shutter = function(option) {
 
 	var opnBtn = $(this);
 	var visible = document.getElementById("close-btn");
+	var screenHeight = screen.height;
+console.log(screenHeight)
+		$(settings.menu).css("top", screenHeight);
 
-	function move (x, y, r) {
-		visible.style.webkitTransform = 'translate3d(' + x + 'px,' + y + 'px,0) rotate(' + r + 'deg)';
+
+		
+
+
 		$(opnBtn).click(function(){
 			$(settings.menu).css("display","block");
-			$(settings.mainBody).css("display", "none");
+			$(settings.menu).not(":animated").animate({top: "0px"},
+				{duration:"slow",
+					complete:function(){
+						}}
+			);
 		});
+
 		$(settings.closeBtn).click(function(){
-			$(settings.menu).css("display","none");
-			$(settings.mainBody).css("display", "block");
+			$(settings.menu).not(":animated").animate({top: (screenHeight) + "px"},
+				{duration:"slow",
+					complete:function(){
+						$(settings.menu).css("display","none");
+						}}
+			);
 		});
-	}
 
 
 
