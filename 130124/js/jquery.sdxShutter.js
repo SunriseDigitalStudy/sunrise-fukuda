@@ -6,11 +6,12 @@ $.fn.shutter = function(option) {
 					mainBody:null
 	       }, option);
 
-	var opnBtn = $(this);
-	var visible = document.getElementById("close-btn");
-	var screenHeight = screen.height;
-console.log(screenHeight)
+		var opnBtn = $(this);
+		var visible = document.getElementById("close-btn");
+		var screenHeight = screen.height;
+		var screenWidth = $(settings.mainBody).width();
 		$(settings.menu).css("top", screenHeight);
+		$(settings.menu).css("width", screenWidth);
 
 
 		
