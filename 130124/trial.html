@@ -9,9 +9,9 @@
 <script src="js/jquery.sdxShutter.js"></script>
 <script>
 $(function(){
-	$("p#open-btn").shutter({
+	$("span#open-btn").shutter({
 		menu: $("section.menu-body"),
-		closeBtn: $("p#close-btn"),
+		closeBtn: $("span#close-btn"),
 		mainBody: $("section.main")
 	});
 });
@@ -19,21 +19,23 @@ $(function(){
 </head>
 <body id="shutterBody">
 	<section class="main">
-		<p id="open-btn">開く</p>
+		<span id="open-btn">開く</span>
+		<div>
+		</div>
 	</section>
 	<section class="menu-body">
-		<p id="close-btn">閉じる</p>
+		<span id="close-btn">閉じる</span>
 		<ul class="menu">
-		<li>1</li>
-		<li>2</li>
-		<li>3</li>
-		<li>4</li>
-		<li>5</li>
-		<li>1</li>
-		<li>2</li>
-		<li>3</li>
-		<li>4</li>
-		<li>5</li>
+		<li>霞ヶ浦</li>
+		<li>琵琶湖</li>
+		<li>河口湖</li>
+		<li>亀山湖</li>
+		<li>相模湖</li>
+		<li>山中湖</li>
+		<li>西湖</li>
+		<li>牛久沼</li>
+		<li>津久井湖</li>
+		<li>芦ノ湖</li>
 		<ul>
 	</section>
 </body>

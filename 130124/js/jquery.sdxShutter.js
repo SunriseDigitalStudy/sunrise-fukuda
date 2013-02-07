@@ -7,36 +7,59 @@ $.fn.shutter = function(option) {
 	       }, option);
 
 		var opnBtn = $(this);
-		var visible = document.getElementById("close-btn");
 		var screenHeight = screen.height;
-		var screenWidth = $(settings.mainBody).width();
+		var screenWidth = $(settings.mainBody).width();		//
+		var paddingL = $(settings.menu).css("padding-left");
+		var paddingR = $(settings.menu).css("padding-right");
+		var menuWidth = screenWidth-parseInt(paddingL)-parseInt(paddingR);
 		$(settings.menu).css("top", screenHeight);
-		$(settings.menu).css("width", screenWidth);
-
-
-		
-
+		$(settings.menu).css("width", menuWidth);
 
 		$(opnBtn).click(function(){
-			$(settings.menu).css("display","block");
-			$(settings.menu).not(":animated").animate({top: "0px"},
-				{duration:"slow",
-					complete:function(){
-						}}
-			);
+			var displayCondition = $(settings.menu).css("display");
+			$(settings.menu).addClass("aaa")
+			if ((settings.menu).css("display") == "block"){$(settings.menu).css("top", 0)}
 		});
 
 		$(settings.closeBtn).click(function(){
-			$(settings.menu).not(":animated").animate({top: (screenHeight) + "px"},
-				{duration:"slow",
-					complete:function(){
-						$(settings.menu).css("display","none");
-						}}
-			);
+			$(settings.menu).css("top", (screenHeight))
+			$(settings.menu).bind("webkitTransitionEnd",function(){
+			if ((settings.menu).css("top") == screenHeight + "px"){
+				$(settings.menu).removeClass("aaa")
+			}
+			});
 		});
 
+/*
+		function risingTo(openClose){
+			   		// 左右とサムネクリックでの動作判定
+					if (openClose == 0){
+			var displayCondition = $(settings.menu).css("display");
+			$(settings.menu).addClass("aaa")
+			if ((settings.menu).css("display") == "block"){$(settings.menu).css("top", 0)}
+					} else if(openClose == 1){
+			$(settings.menu).css("top", (screenHeight))
+			$(settings.menu).bind("webkitTransitionEnd",function(){
+			if ((settings.menu).css("top") == screenHeight + "px"){
+				$(settings.menu).removeClass("aaa")
+			}
+					} 
 
+		// opnクリック
+		$(settings.opnBtn).click(function(){
+			var openClose = 0
+			risingTo(openClose)
+			return false;
+		});
 
+		// closeクリック
+		$(settings.closeBtn).click(function(){
+			var openClose = 1
+			risingTo(openClose)
+			return false;
+		});
+
+*/
 	return this;
 };
 })(jQuery);
