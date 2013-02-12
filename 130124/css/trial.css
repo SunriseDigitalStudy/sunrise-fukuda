@@ -68,8 +68,8 @@ section.main div{
 .menu-body{
 	position: absolute;
 	display: none;
+	width: 100%;
 	margin: 0px auto;
-	padding: 10px;
 	background: #222;
 }
 li{
@@ -82,7 +82,7 @@ li{
   text-align: center;
 }
 
-.aaa{
+.displayOn{
 	display: block;
 	-webkit-transition: 0.5s;
 	transition:0.5s;
@@ -100,4 +100,8 @@ li{
 	margin-bottom: 5px;
 	padding: 5px;
 	-webkit-border-radius: 3px;
+}
+
+.menu-container {
+	margin: 10px;
 }
