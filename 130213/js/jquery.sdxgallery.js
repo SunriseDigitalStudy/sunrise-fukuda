@@ -23,7 +23,7 @@ $.fn.slide = function(option) {
 ここで先に判別しておきます。 */
 var isTouch = ('ontouchstart' in window);
 
-/* hoge のイベントを jQuery.bind で捕獲します。 */
+/* slide のイベントを jQuery.bind で捕獲します。 */
 $(slide).bind({
 
 /* タッチの開始、マウスボタンを押したとき */
@@ -36,7 +36,7 @@ e.preventDefault();
 this.pageX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
 this.pageY = (isTouch ? event.changedTouches[0].pageY : e.pageY);
 
-// 現在の hoge の場所を覚えておく
+// 現在の slide の場所を覚えておく
 this.left = $(this).position().left;
 this.top = $(this).position().top;
 
@@ -55,11 +55,11 @@ return;
 // ページが動くのを止める
 e.preventDefault();
 
-// 移動先の hoge の位置を取得する
+// 移動先の slide の位置を取得する
 this.left = this.left - (this.pageX - (isTouch ? event.changedTouches[0].pageX : e.pageX) );
 this.top = this.top - (this.pageY - (isTouch ? event.changedTouches[0].pageY : e.pageY) );
 
-// hoge を移動させる
+// slide を移動させる
 $(this).css({left:this.left, top:this.top});
 
 // 位置 X,Y 座標を覚えておく
@@ -75,7 +75,7 @@ return;
 // タッチ処理は終了したため、フラグをたたむ
 this.touched = false;
 
-// 必要なら以下で最終の hoge の位置を取得し何かに使う
+// 必要なら以下で最終の slide の位置を取得し何かに使う
 // this.pageX
 // this.pageY
 }
