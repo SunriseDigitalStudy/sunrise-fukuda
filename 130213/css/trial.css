@@ -1,0 +1,76 @@
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, hr,
+header, hgroup, section, article, aside, hgroup, footer, figure, figcaption, nav {
+ margin: 0;
+ padding: 0;
+ font-size: 100%;
+}
+
+body {
+ line-height: 1.0;
+ font-family: Arial, "ヒラギノ角ゴ ProN", "ヒラギノ角ゴ ProN W3", ＭＳ Ｐゴシック, sans-serif;
+ -webkit-text-size-adjust: none;
+ color:#222222;
+}
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary { 
+ display:block;
+}
+
+.block{ display:block;}
+
+img {
+ border: 0;
+ vertical-align: bottom;
+}
+
+ul, ol {
+ list-style: none;
+}
+
+table {
+ border-spacing: 0;
+ empty-cells: show;
+}
+
+.clrfix:after{
+content:"";
+display:block;
+clear:both;
+height:1px;
+overflow:hidden;
+}
+/*//////////////////////////////////////////////////////////////*/
+body{
+	background:url(../img/aaa.jpg);
+
+}
+
+.gallery {
+	position: relative;
+	background: rgba(0,0,0,0.5);
+}
+
+.gallery ul {
+	position:absolute;
+	cursor:move;
+}
+
+.gallery li {
+	position:relative;
+	display: block;
+	float: left;
+	xwidth: 270px;
+	text-align: center;
+}
+
+.gallery li img {
+	xmax-width: 250px;
+}
+
+.btn {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	z-index: 100;
+}
