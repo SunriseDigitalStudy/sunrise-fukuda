@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ギャラリー</title>
+<meta name="viewport" content="width = device-width">
+<link rel="stylesheet" href="css/trial.css" media="screen">
+<script src="js/jquery.js"></script>
+<script src="js/jquery.sdxgallery.js"></script>
+<script>
+$(function(){
+	$("ul.gallery-list").slide({
+		slideImg: $("ul.gallery-list li"),
+		thum: $("ul.gallery-thum li"),
+		galleryThum: $("ul.gallery-thum"),
+		btn: $("ul.btn")
+	});
+});
+</script>
+</head>
+<body>
+	<section class="gallery">
+		<ul class="gallery-thum">
+		</ul>
+			<ul class="gallery-list">
+				<li><img src="img/1.jpg"></li>
+				<li><img src="img/2.jpg"></li>
+				<li><img src="img/3.jpg"></li>
+				<li><img src="img/4.jpg"></li>
+				<li><img src="img/5.jpg"></li>
+				<li><img src="img/6.jpg"></li>
+				<li><img src="img/7.jpg"></li>
+				<li><img src="img/8.jpg"></li>
+				<li><img src="img/9.jpg"></li>
+				<li><img src="img/10.jpg"></li>
+			</ul>
+			<ul class="btn">
+				<li>×</li>
+				<li>前へ</li>
+				<li>次へ</li>
+			</ul>
+	</section>
+</body>
+</html>

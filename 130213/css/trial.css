@@ -1,0 +1,109 @@
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, hr,
+header, hgroup, section, article, aside, hgroup, footer, figure, figcaption, nav {
+ margin: 0;
+ padding: 0;
+ font-size: 100%;
+}
+
+body {
+ line-height: 1.0;
+ font-family: Arial, "ヒラギノ角ゴ ProN", "ヒラギノ角ゴ ProN W3", ＭＳ Ｐゴシック, sans-serif;
+ -webkit-text-size-adjust: none;
+ color:#222222;
+}
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary { 
+ display:block;
+}
+
+.block{ display:block;}
+
+img {
+ border: 0;
+ vertical-align: bottom;
+}
+
+ul, ol {
+ list-style: none;
+}
+
+table {
+ border-spacing: 0;
+ empty-cells: show;
+}
+
+.clrfix:after{
+content:"";
+display:block;
+clear:both;
+height:1px;
+overflow:hidden;
+}
+/*//////////////////////////////////////////////////////////////*/
+body{
+	background:url(../img/aaa.jpg);
+
+}
+
+.gallery {
+	position: relative;
+}
+
+
+.gallery ul.gallery-list {
+	position:absolute;
+	background: rgba(0,0,0,0.5);
+}
+
+.gallery ul.gallery-list {
+	display: none;
+	cursor:move;
+	overflow: hidden;
+}
+
+.gallery ul.gallery-thum {
+	position:absolute;
+
+}
+
+.gallery ul.gallery-thum li {
+	display: inline-block;
+
+}
+
+.gallery ul.gallery-thum li {
+	cursor: pointer;
+}
+
+.gallery ul.gallery-list li {
+	position:relative;
+	display: block;
+	float: left;
+	xwidth: 270px;
+	text-align: center;
+}
+
+.gallery ul.gallery-list li img {
+	xmax-width: 250px;
+	z-index: 100;
+}
+
+.btn {
+	display: none;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background-color: #222;
+}
+
+.btn li {
+	display: inline-block;
+	width: 33%;
+	text-align: center;
+	color: #fff;
+}
+
+ul.gallery-thum li img {
+	width: 50px;
+}
