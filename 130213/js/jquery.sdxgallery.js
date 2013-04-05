@@ -4,16 +4,19 @@ $.fn.slide = function(option) {
 					slideImg: null,
 					galleryThum: null,
 					thum: null,
-					btn: null
+					btn: null,
+					btnClose: null,
+					btnNext: null,
+					btnPrev: null
 		}, option);
 
 		var slide = $(this);
 		var screenWidth = screen.width;
 		var screenHeight = screen.height;
-		var liNum = $(settings.slideImg).length;
-		var ulWidth = liNum*screenWidth
+		var liLength = $(settings.slideImg).length;
 		var innerWidth =$(window).width();
 		var innerHeight =$(window).height();
+		var ulWidth = liLength*innerWidth
 
 		$("img").css("max-width",(innerWidth-100) + "px");
 
@@ -36,8 +39,8 @@ $.fn.slide = function(option) {
 
 		// サムネイルの画像表示切り替え
 		$(settings.thum).live("click", function(){
-		var liNum = $(this).attr("deta-img");
-			$(slide).css("margin-left", (-innerWidth*liNum+innerWidth) + "px");
+			var liNum = $(this).attr("deta-img");
+			$(slide).css("margin-left", (-innerWidth * liNum + innerWidth) + "px");
 			$(slide).show();
 			$(settings.btn).show();
 		});
@@ -46,8 +49,8 @@ $.fn.slide = function(option) {
 		$(this).height(innerHeight);
 		$(".gallery").height(innerHeight);
 
-var showHide = 0;
 
+var showHide = 0;
 
 $(settings.slideImg).click(function(){
 	var showHide = 1;
@@ -61,7 +64,6 @@ $("ul.gallery-list li img").click(function(){
 	return false;
 });
 
-
 function displayTo(showHide){
 	if (showHide == 1){
 		$(slide).css("display", "none");
@@ -70,6 +72,53 @@ function displayTo(showHide){
 		$(slide).css("display", "block");
 	}
 }
+
+	// ボタンクリック時 //
+	function moveTo(direction){
+		var nowLeft = $(slide).css("margin-left");
+		var liWidth = $(slide).css("width");
+console.log(-ulWidth)
+console.log(parseInt(nowLeft))
+
+		if (direction == 1){
+			var plusMinus = "-";
+		} else if (direction == 2){
+			var plusMinus = "+";
+		}
+
+		if (direction == 1){
+			if (parseInt(nowLeft) >= 0){
+			} else {
+			var liWidth = $(settings.slideImg).width();
+			var nowLeft = $(slide).css("margin-left");
+			var nextDistance = plusMinus+liWidth
+			$(slide).css("margin-left", (parseInt(nowLeft)-nextDistance) + "px");
+			}
+
+		} else if (direction == 2){
+			if (parseInt(nowLeft) <= -ulWidth+innerWidth){
+			} else {
+			var liWidth = $(settings.slideImg).width();
+			var nowLeft = $(slide).css("margin-left");
+			var nextDistance = plusMinus+liWidth
+			$(slide).css("margin-left", (parseInt(nowLeft)-nextDistance) + "px");
+		}
+
+		}
+	}
+
+		$(settings.btnPrev).click(function(){
+			var direction = 1;
+			moveTo(direction);
+			return false;
+		});
+
+		$(settings.btnNext).click(function(){
+			var direction = 2;
+			moveTo(direction);
+			return false;
+		});
+
 
 
 /////////touch start

@@ -99,7 +99,8 @@ body{
 
 .btn li {
 	display: inline-block;
-	width: 33%;
+	width: 30%;
+	cursor: pointer;
 	text-align: center;
 	color: #fff;
 }
