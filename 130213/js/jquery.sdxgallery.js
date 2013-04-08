@@ -14,10 +14,11 @@ $.fn.slide = function(option) {
 		var screenWidth = screen.width;
 		var screenHeight = screen.height;
 		var liLength = $(settings.slideImg).length;
-		var innerWidth =$(window).width();
-		var innerHeight =$(window).height();
+		var innerWidth = $(window).width();
+		var innerHeight = $(window).height();
 		var ulWidth = liLength*innerWidth
 
+		$("section").css("width", "innerWidth + px").css("overflow", "hidden");
 		$("img").css("max-width",(innerWidth-100) + "px");
 
 		// ナンバリング用画像初期番号
@@ -46,47 +47,45 @@ $.fn.slide = function(option) {
 		});
 		$(slide).width(ulWidth);
 		$(settings.slideImg).width(innerWidth);
-		$(this).height(innerHeight);
-		$(".gallery").height(innerHeight);
+
+		var btnHeight = $(settings.btnClose).css("height");
+		$(settings.slideImg).height(innerHeight-parseInt(btnHeight));
+		$(this).height(innerHeight-parseInt(btnHeight));
+		$("section").height(innerHeight);
 
 
+//画像周辺クリック時のボタン表示非表示
 var showHide = 0;
+function displayTo(showHide){
+		$(settings.btn).toggle();
+}
 
 $(settings.slideImg).click(function(){
-	var showHide = 1;
 	displayTo(showHide);
 	return false;
 });
 
 $("ul.gallery-list li img").click(function(){
-	var showHide = 2;
 	displayTo(showHide);
 	return false;
 });
 
-function displayTo(showHide){
-	if (showHide == 1){
-		$(slide).css("display", "none");
-		$(settings.btn).css("display", "none");
-	} else if (showHide == 2){
-		$(slide).css("display", "block");
-	}
-}
+
+
 
 	// ボタンクリック時 //
 	function moveTo(direction){
 		var nowLeft = $(slide).css("margin-left");
 		var liWidth = $(slide).css("width");
-console.log(-ulWidth)
-console.log(parseInt(nowLeft))
 
-		if (direction == 1){
+		if (direction == 1) {
 			var plusMinus = "-";
-		} else if (direction == 2){
+		} else if (direction == 2) {
 			var plusMinus = "+";
+		} else {
 		}
 
-		if (direction == 1){
+		if (direction == 1) {
 			if (parseInt(nowLeft) >= 0){
 			} else {
 			var liWidth = $(settings.slideImg).width();
@@ -94,16 +93,17 @@ console.log(parseInt(nowLeft))
 			var nextDistance = plusMinus+liWidth
 			$(slide).css("margin-left", (parseInt(nowLeft)-nextDistance) + "px");
 			}
-
-		} else if (direction == 2){
+		} else if (direction == 2) {
 			if (parseInt(nowLeft) <= -ulWidth+innerWidth){
 			} else {
 			var liWidth = $(settings.slideImg).width();
 			var nowLeft = $(slide).css("margin-left");
 			var nextDistance = plusMinus+liWidth
 			$(slide).css("margin-left", (parseInt(nowLeft)-nextDistance) + "px");
-		}
-
+			}
+		} else if (direction == 3) {
+			$(slide).css("display", "none");
+			$(settings.btn).css("display", "none");
 		}
 	}
 
@@ -119,6 +119,11 @@ console.log(parseInt(nowLeft))
 			return false;
 		});
 
+		$(settings.btnClose).click(function(){
+			var direction = 3;
+			moveTo(direction);
+			return false;
+		});
 
 
 /////////touch start
