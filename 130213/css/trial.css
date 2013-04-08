@@ -92,7 +92,7 @@ body{
 .btn {
 	display: none;
 	position: absolute;
-	bottom: 0px;
+	bottom: 16px;
 	width: 100%;
 	background-color: #222;
 }
@@ -100,9 +100,11 @@ body{
 .btn li {
 	display: inline-block;
 	width: 30%;
+	height: 16px;
 	cursor: pointer;
 	text-align: center;
 	color: #fff;
+	border: 1px solid #fff;
 }
 
 ul.gallery-thum li img {
